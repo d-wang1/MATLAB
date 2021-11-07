@@ -5,8 +5,8 @@
 
 covidstlcity_full = double(table2array(COVID_STLcity(:,[5:6])))./300000;
 
-coviddata = ; % TO SPECIFY
-t = ; % TO SPECIFY
+coviddata = load(COVIDdata.mat) % TO SPECIFY
+% t = ; % TO SPECIFY
 
 % The following line creates an 'anonymous' function that will return the cost (i.e., the model fitting error) given a set
 % of parameters.  There are some technical reasons for setting this up in this way.

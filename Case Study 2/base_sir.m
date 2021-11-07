@@ -15,7 +15,22 @@ sys_sir_base = ss(A,B,eye(4),zeros(4,1),1);
 Y = lsim(sys_sir_base,zeros(1000,1),linspace(0,999,1000),x0);
 
 % plot the output trajectory
+figure;
 plot(Y);
 legend('S','I','R','D');
+title("Y");
+xlabel('Time')
+ylabel('Percentage Population');
+
+x = zeros(4, 1000);
+x(:,1) = [1; 0; 0; 0];
+for i=2:1000
+    x(:,i) = A*x(:,i-1);
+end
+x = x';
+figure;
+plot(x);
+legend('S','I','R','D');
+title("X");
 xlabel('Time')
 ylabel('Percentage Population');
